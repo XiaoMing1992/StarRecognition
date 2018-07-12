@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">StarRecognition</string>
+    <string name="no_face">未识别到人脸</string>
+    <string name="no_face_info">未识别到人物的信息</string>
+    <string name="loading_text">拼命加载中…</string>
+</resources>

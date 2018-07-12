@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.konka.kkstar.ui.ScaleRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/movie_item_layout"
+    android:layout_width="153dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/movie_item_bg"
+    android:focusable="true">
+
+    <!--&lt;!&ndash; 背景图 &ndash;&gt;-->
+    <!--<ImageView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="@drawable/category_item_layout_bg" />-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+
+<!--        <ImageView
+            android:id="@+id/movie_pic"
+            android:layout_width="144dp"
+            android:layout_height="198dp"
+            android:layout_above="@+id/movie_name_layout"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_default" />-->
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/movie_pic"
+            android:layout_width="144dp"
+            android:layout_height="198dp"
+            android:layout_above="@+id/movie_name_layout"
+            android:scaleType="fitXY"
+            android:gravity="center"
+            android:src="@drawable/img_default"
+            app:riv_corner_radius_top_left="4dp"
+            app:riv_corner_radius_top_right="4dp"
+            app:riv_corner_radius_bottom_left="4dp"
+            app:riv_corner_radius_bottom_right="4dp"
+            />
+
+        <LinearLayout
+            android:id="@+id/movie_name_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:descendantFocusability="afterDescendants"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/movie_seq_num"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:background="@drawable/num_bg"
+                android:gravity="center"
+                android:text="9"
+                android:textColor="@color/color1"
+                android:textSize="@dimen/default_13" />
+
+            <TextView
+                android:id="@+id/movie_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:ellipsize="marquee"
+                android:maxEms="7"
+                android:singleLine="true"
+                android:text="影片名称"
+                android:textColor="@color/color1"
+                android:textSize="@dimen/default_19" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.konka.kkstar.ui.ScaleRelativeLayout>

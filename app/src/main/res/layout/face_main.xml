@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="326dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:alpha="0.9"
+        android:background="@color/color3"
+        android:paddingLeft="@dimen/face_layout_paddingLeft"
+        android:paddingRight="@dimen/face_layout_paddingRight"></RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/face_layout"
+        android:layout_width="match_parent"
+        android:layout_height="326dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:paddingLeft="@dimen/face_layout_paddingLeft"
+        android:paddingRight="@dimen/face_layout_paddingRight">
+
+        <RelativeLayout
+            android:id="@+id/face_recyclerview_layout"
+            android:layout_width="@dimen/face_background_width"
+            android:layout_height="@dimen/face_background_height"
+            android:layout_marginBottom="@dimen/face_picture_marginBottom"
+            android:layout_marginTop="@dimen/face_picture_marginTop">
+
+            <ImageView
+                android:id="@+id/face_background"
+                android:layout_width="@dimen/face_background_width"
+                android:layout_height="@dimen/face_background_height"
+                android:scaleType="fitXY" />
+
+            <ImageView
+                android:id="@+id/faceImgView"
+                android:layout_width="@dimen/face_background_width"
+                android:layout_height="@dimen/face_background_height"
+                android:scaleType="fitXY"
+                />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/info_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="43dp"
+            android:layout_toRightOf="@+id/face_recyclerview_layout"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:id="@+id/description_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <!--                <RelativeLayout
+                                    android:id="@+id/more_pic_layout"
+                                    android:layout_width="0dp"
+                                    android:layout_height="0dp"
+                                    android:layout_marginLeft="0dp"
+                                    android:layout_marginTop="0dp"
+                                    android:background="@drawable/many_card_girl"
+                                    android:visibility="visible">
+
+                                </RelativeLayout>-->
+
+                <LinearLayout
+                    android:id="@+id/linear_info_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/one_card_boy"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <RelativeLayout
+                        android:id="@+id/actor_pic_layout"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginLeft="45dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/head_icon_boy"
+                        android:gravity="center">
+
+                        <com.konka.kkstar.ui.CircleImageView
+                            android:id="@+id/actor_pic"
+                            android:layout_width="108dp"
+                            android:layout_height="108dp"
+                            android:src="@drawable/img_default"
+                            app:civ_border_color="@color/transparent"
+                            app:civ_border_width="1dp" />
+
+                    </RelativeLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="470dp"
+                        android:layout_height="138dp"
+                        android:layout_marginLeft="48dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="30dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/actor_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="@color/color1"
+                            android:textSize="@dimen/default_24" />
+
+                        <ScrollView
+                            android:id="@+id/scrollView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:fillViewport="true"
+                            android:gravity="center"
+                            android:scrollbars="none">
+
+                            <TextView
+                                android:id="@+id/description"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textColor="@color/color1"
+                                android:textSize="@dimen/default_17" />
+
+                        </ScrollView>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="0dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="按 "
+                    android:textColor="@color/color1"
+                    android:textSize="@dimen/default_16" />
+
+                <TextView
+                    android:id="@+id/left_right_tip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="左/右"
+                    android:textColor="@color/color2"
+                    android:textSize="@dimen/default_16"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/more_tip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=" 切换人物， 按 "
+                    android:textColor="@color/color1"
+                    android:textSize="@dimen/default_16"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="OK"
+                    android:textColor="@color/color2"
+                    android:textSize="@dimen/default_16" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=" 查看他的影片"
+                    android:textColor="@color/color1"
+                    android:textSize="@dimen/default_16" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/face_fail_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/face_recyclerview_layout"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="未识别到人物的信息"
+                android:textColor="@color/color1"
+                android:textSize="24sp" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

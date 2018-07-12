@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.konka.kkstar">
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <!--
+      <data android:host="MainActivity" android:scheme="com.konka.kkstar" />
+      这条属性可以让启动app入口Activity申明为由接收隐士的Intent来启动，这样自然也就不会显示图标了
+    -->
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <data
+                    android:host="MainActivity"
+                    android:scheme="com.konka.kkstar" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <service
+            android:name=".MyService"
+            android:exported="true">
+            <intent-filter android:priority="1000">
+                <action android:name="konka.intent.action.ATHENA.SEND" />
+            </intent-filter>
+        </service>
+        <receiver android:name=".FaceReceiver">
+            <intent-filter>
+                <action android:name="com.iflytek.xiri2.allActivity.QUERY" />
+                <action android:name="konka.action.START_VOICE_SEARCH" />
+                <action android:name="android.kkface.demo.action" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

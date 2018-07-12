@@ -1,0 +1,15 @@
+{
+    "appName":"YourAppName",
+    "appId":"imageRecognitionAppId",
+    "appKey":"imageRecognitionAppKey",
+    "channel":"konka",
+    "priority":1,
+    "directives":[     
+        {
+            "nameSpace":"tv.image.recognition",
+            "name":[
+                "ShowInfo"
+            ]
+        }
+    ]
+}
